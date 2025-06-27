@@ -6,25 +6,30 @@ import { Textarea } from '@/components/ui/textarea';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 
 const ContactSection = () => {
+  const whatsappNumber = "5585986161559";
+  const whatsappLink = `https://wa.me/${whatsappNumber}`;
+
   const contactInfo = [
     {
       icon: Phone,
       title: 'Telefone',
-      info: '(11) 99999-9999',
+      info: '(85) 98616-1559',
       subtitle: 'WhatsApp disponível',
-      gradient: 'from-green-500 to-green-600'
+      gradient: 'from-green-500 to-green-600',
+      link: whatsappLink
     },
     {
       icon: Mail,
       title: 'E-mail',
       info: 'contato@logmunck.com.br',
       subtitle: 'Resposta em 24h',
-      gradient: 'from-blue-500 to-blue-600'
+      gradient: 'from-blue-500 to-blue-600',
+      link: 'mailto:contato@logmunck.com.br'
     },
     {
       icon: MapPin,
       title: 'Endereço',
-      info: 'São Paulo - SP',
+      info: 'Fortaleza - CE',
       subtitle: 'Atendemos toda região',
       gradient: 'from-orange-500 to-orange-600'
     },
@@ -62,8 +67,8 @@ const ContactSection = () => {
           <div className="lg:col-span-1 space-y-6">
             {contactInfo.map((item, index) => {
               const IconComponent = item.icon;
-              return (
-                <div key={index} className="flex items-start space-x-4 p-6 bg-white/80 backdrop-blur-sm rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 border border-white/20 group hover:scale-105">
+              const content = (
+                <div className="flex items-start space-x-4 p-6 bg-white/80 backdrop-blur-sm rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 border border-white/20 group hover:scale-105">
                   <div className={`w-14 h-14 bg-gradient-to-br ${item.gradient} rounded-2xl flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform duration-300 shadow-lg`}>
                     <IconComponent className="h-7 w-7 text-white" />
                   </div>
@@ -72,6 +77,22 @@ const ContactSection = () => {
                     <p className="text-orange-600 font-bold text-lg mb-1">{item.info}</p>
                     <p className="text-sm text-gray-600">{item.subtitle}</p>
                   </div>
+                </div>
+              );
+
+              return item.link ? (
+                <a
+                  key={index}
+                  href={item.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block"
+                >
+                  {content}
+                </a>
+              ) : (
+                <div key={index}>
+                  {content}
                 </div>
               );
             })}
@@ -102,7 +123,7 @@ const ContactSection = () => {
                     Telefone *
                   </label>
                   <Input 
-                    placeholder="(11) 99999-9999" 
+                    placeholder="(85) 98616-1559" 
                     className="h-12 border-2 border-gray-200 rounded-xl focus:border-orange-500 transition-colors bg-white/80"
                   />
                 </div>
@@ -151,10 +172,17 @@ const ContactSection = () => {
                 />
               </div>
 
-              <Button className="w-full bg-gradient-to-r from-orange-600 to-orange-700 hover:from-orange-700 hover:to-orange-800 text-white text-lg py-4 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105">
-                <Send className="mr-2 h-5 w-5" />
-                Enviar Solicitação
-              </Button>
+              <a 
+                href={whatsappLink}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block"
+              >
+                <Button className="w-full bg-gradient-to-r from-orange-600 to-orange-700 hover:from-orange-700 hover:to-orange-800 text-white text-lg py-4 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105">
+                  <Send className="mr-2 h-5 w-5" />
+                  Enviar via WhatsApp
+                </Button>
+              </a>
 
               <p className="text-sm text-gray-600 text-center bg-gray-50/80 p-4 rounded-xl">
                 <strong>* Campos obrigatórios.</strong> Responderemos em até 2 horas úteis.

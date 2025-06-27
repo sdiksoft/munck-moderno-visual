@@ -14,6 +14,9 @@ const Header = () => {
     { name: 'Contato', href: '#contato' },
   ];
 
+  const whatsappNumber = "5585986161559";
+  const whatsappLink = `https://wa.me/${whatsappNumber}`;
+
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-md border-b border-gray-200/50 shadow-lg">
       <div className="container mx-auto px-4">
@@ -42,13 +45,24 @@ const Header = () => {
 
           {/* Enhanced Contact Info & CTA */}
           <div className="hidden lg:flex items-center space-x-6">
-            <div className="flex items-center space-x-2 text-sm text-gray-600 bg-gray-50/80 px-4 py-2 rounded-full">
+            <a 
+              href={whatsappLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center space-x-2 text-sm text-gray-600 bg-gray-50/80 px-4 py-2 rounded-full hover:bg-green-50 hover:text-green-600 transition-all duration-300"
+            >
               <Phone className="h-4 w-4 text-orange-600" />
-              <span className="font-medium">(11) 99999-9999</span>
-            </div>
-            <Button className="bg-gradient-to-r from-orange-600 to-orange-700 hover:from-orange-700 hover:to-orange-800 text-white px-6 py-2.5 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105">
-              Solicitar Orçamento
-            </Button>
+              <span className="font-medium">(85) 98616-1559</span>
+            </a>
+            <a 
+              href={whatsappLink}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Button className="bg-gradient-to-r from-orange-600 to-orange-700 hover:from-orange-700 hover:to-orange-800 text-white px-6 py-2.5 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105">
+                Solicitar Orçamento
+              </Button>
+            </a>
           </div>
 
           {/* Mobile Menu Button */}
@@ -75,13 +89,24 @@ const Header = () => {
                 </a>
               ))}
               <div className="pt-6 border-t border-gray-200/50 space-y-4">
-                <div className="flex items-center space-x-3 text-sm text-gray-600 bg-gray-50 px-4 py-3 rounded-lg">
+                <a 
+                  href={whatsappLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center space-x-3 text-sm text-gray-600 bg-gray-50 px-4 py-3 rounded-lg hover:bg-green-50 hover:text-green-600 transition-all duration-300"
+                >
                   <Phone className="h-4 w-4 text-orange-600" />
-                  <span className="font-medium">(11) 99999-9999</span>
-                </div>
-                <Button className="w-full bg-gradient-to-r from-orange-600 to-orange-700 hover:from-orange-700 hover:to-orange-800 text-white py-3 rounded-xl shadow-lg">
-                  Solicitar Orçamento
-                </Button>
+                  <span className="font-medium">(85) 98616-1559</span>
+                </a>
+                <a 
+                  href={whatsappLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <Button className="w-full bg-gradient-to-r from-orange-600 to-orange-700 hover:from-orange-700 hover:to-orange-800 text-white py-3 rounded-xl shadow-lg">
+                    Solicitar Orçamento
+                  </Button>
+                </a>
               </div>
             </nav>
           </div>

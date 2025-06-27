@@ -2,6 +2,9 @@
 import { Phone, Mail, MapPin, Clock, Facebook, Instagram, Linkedin } from 'lucide-react';
 
 const Footer = () => {
+  const whatsappNumber = "5585986161559";
+  const whatsappLink = `https://wa.me/${whatsappNumber}`;
+
   return (
     <footer className="bg-gray-900 text-white">
       <div className="container mx-auto px-4 py-16">
@@ -70,24 +73,32 @@ const Footer = () => {
           <div>
             <h3 className="text-lg font-semibold mb-4">Contato</h3>
             <div className="space-y-4">
-              <div className="flex items-center space-x-3">
-                <Phone className="h-5 w-5 text-orange-500 flex-shrink-0" />
+              <a 
+                href={whatsappLink}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center space-x-3 group hover:text-green-400 transition-colors"
+              >
+                <Phone className="h-5 w-5 text-orange-500 flex-shrink-0 group-hover:text-green-400 transition-colors" />
                 <div>
-                  <div className="text-white">(11) 99999-9999</div>
+                  <div className="text-white group-hover:text-green-400 transition-colors">(85) 98616-1559</div>
                   <div className="text-sm text-gray-400">WhatsApp disponível</div>
                 </div>
-              </div>
-              <div className="flex items-center space-x-3">
-                <Mail className="h-5 w-5 text-orange-500 flex-shrink-0" />
+              </a>
+              <a 
+                href="mailto:contato@logmunck.com.br"
+                className="flex items-center space-x-3 group hover:text-blue-400 transition-colors"
+              >
+                <Mail className="h-5 w-5 text-orange-500 flex-shrink-0 group-hover:text-blue-400 transition-colors" />
                 <div>
-                  <div className="text-white">contato@logmunck.com.br</div>
+                  <div className="text-white group-hover:text-blue-400 transition-colors">contato@logmunck.com.br</div>
                   <div className="text-sm text-gray-400">Resposta em 24h</div>
                 </div>
-              </div>
+              </a>
               <div className="flex items-center space-x-3">
                 <MapPin className="h-5 w-5 text-orange-500 flex-shrink-0" />
                 <div>
-                  <div className="text-white">São Paulo - SP</div>
+                  <div className="text-white">Fortaleza - CE</div>
                   <div className="text-sm text-gray-400">Atendemos toda região</div>
                 </div>
               </div>
