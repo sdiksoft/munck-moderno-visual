@@ -21,12 +21,13 @@ const Header = () => {
     <header className="fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-md border-b border-gray-200/50 shadow-lg">
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-20">
-          {/* Enhanced Logo */}
+          {/* Logo */}
           <div className="flex-shrink-0">
-            <div className="text-3xl font-bold">
-              <span className="bg-gradient-to-r from-orange-600 to-orange-700 bg-clip-text text-transparent">Log</span>
-              <span className="text-gray-800">Munck</span>
-            </div>
+            <img 
+              src="/lovable-uploads/48144925-aa3d-47dc-91a7-5c9ce4b71977.png" 
+              alt="LogMunck - Locação de Muncks e Equipamentos" 
+              className="h-12 w-auto"
+            />
           </div>
 
           {/* Desktop Navigation */}
