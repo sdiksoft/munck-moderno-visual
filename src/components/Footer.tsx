@@ -98,8 +98,9 @@ const Footer = () => {
               <div className="flex items-center space-x-3">
                 <MapPin className="h-5 w-5 text-orange-500 flex-shrink-0" />
                 <div>
-                  <div className="text-white">Fortaleza - CE</div>
-                  <div className="text-sm text-gray-400">Atendemos toda região</div>
+                  <div className="text-white">R. Gatasse Kalume, 22</div>
+                  <div className="text-sm text-gray-400">Messejana, Fortaleza - CE</div>
+                  <div className="text-sm text-gray-400">CEP: 60842-340</div>
                 </div>
               </div>
               <div className="flex items-center space-x-3">

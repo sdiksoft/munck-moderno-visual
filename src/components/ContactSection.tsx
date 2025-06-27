@@ -29,8 +29,8 @@ const ContactSection = () => {
     {
       icon: MapPin,
       title: 'Endereço',
-      info: 'Fortaleza - CE',
-      subtitle: 'Atendemos toda região',
+      info: 'R. Gatasse Kalume, 22',
+      subtitle: 'Messejana, Fortaleza - CE, 60842-340',
       gradient: 'from-orange-500 to-orange-600'
     },
     {
