@@ -80,11 +80,10 @@ const HeroSection = () => {
           <div className="relative">
             <div className="relative aspect-square rounded-3xl overflow-hidden shadow-2xl bg-gradient-to-br from-orange-100 to-blue-100 hover:scale-105 transition-transform duration-700">
               <img
-                src="https://images.unsplash.com/photo-1581090464777-f3220bbe1b8b?w=600&h=600&fit=crop&crop=center"
-                alt="Munck em operação"
+                src="/lovable-uploads/40e4834f-f0a0-4f50-b776-42be001fadfc.png"
+                alt="Equipamentos LogMunck em operação"
                 className="w-full h-full object-cover"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent"></div>
             </div>
             
             {/* Enhanced floating stats */}
