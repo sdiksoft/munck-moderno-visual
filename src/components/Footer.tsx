@@ -19,7 +19,7 @@ const Footer = () => {
               muncks e equipamentos pesados com qualidade e segurança.
             </p>
             <div className="flex space-x-4">
-              <a href="#" className="w-10 h-10 bg-orange-600 rounded-full flex items-center justify-center hover:bg-orange-700 transition-colors">
+              <a href="https://www.facebook.com/logmunck" className="w-10 h-10 bg-orange-600 rounded-full flex items-center justify-center hover:bg-orange-700 transition-colors">
                 <Facebook className="h-5 w-5" />
               </a>
               <a href="#" className="w-10 h-10 bg-orange-600 rounded-full flex items-center justify-center hover:bg-orange-700 transition-colors">
