@@ -7,7 +7,7 @@ const EquipmentSection = () => {
   const equipment = [
     {
       name: 'Munck 3 Toneladas',
-      image: '/lovable-uploads/924e47e1-05be-4f46-8dce-93fbcf155b10.png',
+      image: '/lovable-uploads/02b94c76-cacd-4064-b409-7139a9b5948b.png',
       capacity: '3 Toneladas',
       reach: '8 metros',
       ideal: 'Obras residenciais',
@@ -15,7 +15,7 @@ const EquipmentSection = () => {
     },
     {
       name: 'Munck 15 Toneladas',
-      image: '/lovable-uploads/02b94c76-cacd-4064-b409-7139a9b5948b.png',
+      image: '/lovable-uploads/924e47e1-05be-4f46-8dce-93fbcf155b10.png',
       capacity: '15 Toneladas',
       reach: '15 metros',
       ideal: 'Obras comerciais',
