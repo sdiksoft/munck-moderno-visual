@@ -1,5 +1,5 @@
 
-import { Phone, Mail, MapPin, Clock, Facebook, Instagram, Linkedin } from 'lucide-react';
+import { Phone, Mail, MapPin, Clock, Facebook, Instagram } from 'lucide-react';
 
 const Footer = () => {
   const whatsappNumber = "5585986161559";
@@ -24,9 +24,6 @@ const Footer = () => {
               </a>
               <a href="https://www.instagram.com/logmunck/" className="w-10 h-10 bg-orange-600 rounded-full flex items-center justify-center hover:bg-orange-700 transition-colors">
                 <Instagram className="h-5 w-5" />
-              </a>
-              <a href="#" className="w-10 h-10 bg-orange-600 rounded-full flex items-center justify-center hover:bg-orange-700 transition-colors">
-                <Linkedin className="h-5 w-5" />
               </a>
             </div>
           </div>
