@@ -56,64 +56,69 @@ const EquipmentSection = () => {
   ];
 
   return (
-    <section id="equipamentos" className="py-24 bg-gradient-to-br from-white via-gray-50/50 to-white relative overflow-hidden">
+    <section id="equipamentos" className="py-24 bg-gradient-to-br from-white via-gray-50/50 to-white relative overflow-hidden" aria-labelledby="equipment-heading">
       {/* Background decorative elements */}
-      <div className="absolute top-20 right-20 w-64 h-64 bg-gradient-to-br from-orange-200/30 to-transparent rounded-full blur-3xl"></div>
-      <div className="absolute bottom-20 left-20 w-64 h-64 bg-gradient-to-tr from-blue-200/30 to-transparent rounded-full blur-3xl"></div>
+      <div className="absolute top-20 right-20 w-64 h-64 bg-gradient-to-br from-orange-200/30 to-transparent rounded-full blur-3xl" aria-hidden="true"></div>
+      <div className="absolute bottom-20 left-20 w-64 h-64 bg-gradient-to-tr from-blue-200/30 to-transparent rounded-full blur-3xl" aria-hidden="true"></div>
       
       <div className="container mx-auto px-4 relative z-10">
-        <div className="text-center mb-20">
-          <div className="inline-flex items-center bg-gradient-to-r from-orange-100 to-blue-100 px-6 py-3 rounded-full text-sm font-medium text-gray-700 mb-6 border border-orange-200/50">
-            🏗️ Nossa Frota Completa
+        <header className="text-center mb-20">
+          <div className="inline-flex items-center bg-gradient-to-r from-orange-100 to-blue-100 px-6 py-3 rounded-full text-sm font-medium text-gray-700 mb-6 border border-orange-200/50" aria-label="Seção de destaque">
+            <span aria-hidden="true">🏗️</span> Nossa Frota Completa
           </div>
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+          <h2 id="equipment-heading" className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
             Nossos <span className="bg-gradient-to-r from-orange-600 to-orange-700 bg-clip-text text-transparent">Equipamentos</span>
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
             Frota completa e moderna para atender projetos de todos os portes 
             com máxima segurança e eficiência.
           </p>
-        </div>
+        </header>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8" role="list">
           {equipment.map((item, index) => (
-            <Card key={index} className="group overflow-hidden border-0 shadow-lg hover:shadow-2xl transition-all duration-500 bg-white/90 backdrop-blur-sm hover:scale-105 relative">
+            <article key={index} className="group overflow-hidden border-0 shadow-lg hover:shadow-2xl transition-all duration-500 bg-white/90 backdrop-blur-sm hover:scale-105 relative focus-within:ring-2 focus-within:ring-orange-500 focus-within:ring-offset-2 rounded-lg" role="listitem">
               {/* Card gradient overlay */}
-              <div className={`absolute inset-0 bg-gradient-to-br ${item.gradient} opacity-0 group-hover:opacity-100 transition-opacity duration-500`}></div>
+              <div className={`absolute inset-0 bg-gradient-to-br ${item.gradient} opacity-0 group-hover:opacity-100 transition-opacity duration-500`} aria-hidden="true"></div>
               
-              <div className="aspect-[4/3] overflow-hidden relative">
-                <img
-                  src={item.image}
-                  alt={item.name}
-                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent group-hover:from-black/60 transition-all duration-500"></div>
-              </div>
-              
-              <CardContent className="p-8 relative z-10">
-                <h3 className="text-2xl font-bold text-gray-900 mb-6 group-hover:text-gray-800 transition-colors">{item.name}</h3>
-                
-                <div className="space-y-4 mb-8">
-                  <div className="flex justify-between items-center py-2 border-b border-gray-100">
-                    <span className="text-gray-600 font-medium">Capacidade:</span>
-                    <span className="font-bold text-orange-600 text-lg">{item.capacity}</span>
-                  </div>
-                  <div className="flex justify-between items-center py-2 border-b border-gray-100">
-                    <span className="text-gray-600 font-medium">Alcance:</span>
-                    <span className="font-bold text-blue-600 text-lg">{item.reach}</span>
-                  </div>
-                  <div className="flex justify-between items-center py-2">
-                    <span className="text-gray-600 font-medium">Ideal para:</span>
-                    <span className="font-bold text-gray-900">{item.ideal}</span>
-                  </div>
+              <Card className="h-full border-0 bg-transparent">
+                <div className="aspect-[4/3] overflow-hidden relative">
+                  <img
+                    src={item.image}
+                    alt={`${item.name} - Equipamento da LogMunck com capacidade de ${item.capacity} e alcance de ${item.reach}, ideal para ${item.ideal}`}
+                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent group-hover:from-black/60 transition-all duration-500" aria-hidden="true"></div>
                 </div>
                 
-                <Button className="w-full bg-gradient-to-r from-orange-600 to-orange-700 hover:from-orange-700 hover:to-orange-800 text-white py-3 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 group-hover:scale-105">
-                  Solicitar Orçamento
-                  <ArrowRight className="ml-2 h-4 w-4" />
-                </Button>
-              </CardContent>
-            </Card>
+                <CardContent className="p-8 relative z-10">
+                  <h3 className="text-2xl font-bold text-gray-900 mb-6 group-hover:text-gray-800 transition-colors">{item.name}</h3>
+                  
+                  <dl className="space-y-4 mb-8" aria-label={`Especificações do ${item.name}`}>
+                    <div className="flex justify-between items-center py-2 border-b border-gray-100">
+                      <dt className="text-gray-600 font-medium">Capacidade:</dt>
+                      <dd className="font-bold text-orange-600 text-lg">{item.capacity}</dd>
+                    </div>
+                    <div className="flex justify-between items-center py-2 border-b border-gray-100">
+                      <dt className="text-gray-600 font-medium">Alcance:</dt>
+                      <dd className="font-bold text-blue-600 text-lg">{item.reach}</dd>
+                    </div>
+                    <div className="flex justify-between items-center py-2">
+                      <dt className="text-gray-600 font-medium">Ideal para:</dt>
+                      <dd className="font-bold text-gray-900">{item.ideal}</dd>
+                    </div>
+                  </dl>
+                  
+                  <Button 
+                    className="w-full bg-gradient-to-r from-orange-600 to-orange-700 hover:from-orange-700 hover:to-orange-800 text-white py-3 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 group-hover:scale-105 focus:ring-2 focus:ring-orange-500 focus:ring-offset-2"
+                    aria-label={`Solicitar orçamento para ${item.name}`}
+                  >
+                    Solicitar Orçamento
+                    <ArrowRight className="ml-2 h-4 w-4" aria-hidden="true" />
+                  </Button>
+                </CardContent>
+              </Card>
+            </article>
           ))}
         </div>
       </div>
