@@ -38,8 +38,8 @@ const EquipmentSection = () => {
       gradient: 'from-purple-500/20 to-purple-600/20'
     },
     {
-      name: 'Guindauto 70 Toneladas',
-      image: 'https://images.unsplash.com/photo-1649972904349-6e44c42644a7?w=400&h=300&fit=crop&crop=center',
+      name: 'Guindaste 70 Toneladas',
+      image: '/lovable-uploads/436f6ecf-7a6a-4b51-a9d7-e7d3d07347a8.png',
       capacity: '70 Toneladas',
       reach: '45 metros',
       ideal: 'Projetos especiais',
