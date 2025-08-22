@@ -7,7 +7,7 @@ const EquipmentSection = () => {
   const equipment = [
     {
       name: 'Munck 3 Toneladas',
-      image: 'https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?w=400&h=300&fit=crop&crop=center',
+      image: '/lovable-uploads/924e47e1-05be-4f46-8dce-93fbcf155b10.png',
       capacity: '3 Toneladas',
       reach: '8 metros',
       ideal: 'Obras residenciais',
