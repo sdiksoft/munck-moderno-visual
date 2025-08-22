@@ -51,8 +51,8 @@ const AboutSection = () => {
           <div className="relative">
             <div className="aspect-[4/3] rounded-2xl overflow-hidden shadow-2xl">
               <img
-                src="https://images.unsplash.com/photo-1605810230434-7631ac76ec81?w=600&h=450&fit=crop&crop=center"
-                alt="Equipe LogMunck"
+                src="/lovable-uploads/904dfbda-67ec-4741-9046-dc1fb87cfb91.png"
+                alt="Equipamentos LogMunck em operação"
                 className="w-full h-full object-cover"
               />
             </div>
