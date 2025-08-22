@@ -47,7 +47,7 @@ const EquipmentSection = () => {
     },
     {
       name: 'Equipamentos Auxiliares',
-      image: 'https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=400&h=300&fit=crop&crop=center',
+      image: '/lovable-uploads/4615cd26-fd68-46ff-8871-a4a7584f6a72.png',
       capacity: 'Variável',
       reach: 'Conforme necessidade',
       ideal: 'Suporte às operações',
