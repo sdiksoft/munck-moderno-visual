@@ -15,7 +15,7 @@ const EquipmentSection = () => {
     },
     {
       name: 'Munck 15 Toneladas',
-      image: 'https://images.unsplash.com/photo-1531297484001-80022131f5a1?w=400&h=300&fit=crop&crop=center',
+      image: '/lovable-uploads/02b94c76-cacd-4064-b409-7139a9b5948b.png',
       capacity: '15 Toneladas',
       reach: '15 metros',
       ideal: 'Obras comerciais',
