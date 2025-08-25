@@ -50,6 +50,14 @@ const EquipmentSection = () => {
       gradient: 'from-red-500/20 to-red-600/20'
     },
     {
+      name: 'Guindaste 110 Toneladas',
+      image: '/lovable-uploads/5fc049a1-8aa8-4c5a-9311-fd65c67a531a.png',
+      capacity: '110 Toneladas',
+      reach: '68 metros',
+      ideal: 'Grandes projetos industriais',
+      gradient: 'from-teal-500/20 to-teal-600/20'
+    },
+    {
       name: 'Equipamentos Auxiliares',
       image: '/lovable-uploads/4615cd26-fd68-46ff-8871-a4a7584f6a72.png',
       capacity: 'Variável',
