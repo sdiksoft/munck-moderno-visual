@@ -5,6 +5,8 @@ import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious
 import { ArrowRight } from 'lucide-react';
 
 const EquipmentSection = () => {
+  const whatsappNumber = "5585986161559";
+  const whatsappLink = `https://wa.me/${whatsappNumber}?text=Olá! Gostaria de solicitar um orçamento para locação de equipamentos.`;
   const equipment = [
     {
       name: 'Munck 3 Toneladas',
@@ -120,13 +122,20 @@ const EquipmentSection = () => {
                         </div>
                       </dl>
                       
-                      <Button 
-                        className="w-full bg-gradient-to-r from-orange-600 to-orange-700 hover:from-orange-700 hover:to-orange-800 text-white py-3 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 group-hover:scale-105 focus:ring-2 focus:ring-orange-500 focus:ring-offset-2"
-                        aria-label={`Solicitar orçamento para ${item.name}`}
+                      <a 
+                        href={whatsappLink}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="w-full inline-block"
                       >
-                        Solicitar Orçamento
-                        <ArrowRight className="ml-2 h-4 w-4" aria-hidden="true" />
-                      </Button>
+                        <Button 
+                          className="w-full bg-gradient-to-r from-orange-600 to-orange-700 hover:from-orange-700 hover:to-orange-800 text-white py-3 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 group-hover:scale-105 focus:ring-2 focus:ring-orange-500 focus:ring-offset-2"
+                          aria-label={`Solicitar orçamento para ${item.name} via WhatsApp`}
+                        >
+                          Solicitar Orçamento
+                          <ArrowRight className="ml-2 h-4 w-4" aria-hidden="true" />
+                        </Button>
+                      </a>
                     </CardContent>
                   </Card>
                 </article>
