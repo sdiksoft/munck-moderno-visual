@@ -99,35 +99,36 @@ const EquipmentSection = () => {
           <CarouselContent className="ml-0">
             {equipment.map((item, index) => (
               <CarouselItem key={index} className="pl-4 md:basis-1/2 lg:basis-1/3">
-                <article className="group overflow-hidden border-0 shadow-lg hover:shadow-2xl transition-all duration-500 bg-white/90 backdrop-blur-sm hover:scale-105 relative focus-within:ring-2 focus-within:ring-orange-500 focus-within:ring-offset-2 rounded-lg h-full">
-                  {/* Card gradient overlay */}
-                  <div className={`absolute inset-0 bg-gradient-to-br ${item.gradient} opacity-0 group-hover:opacity-100 transition-opacity duration-500`} aria-hidden="true"></div>
-                  
-                  <Card className="h-full border-0 bg-transparent">
-                    <div className="aspect-[4/3] overflow-hidden relative">
+                <article className="group overflow-hidden border-0 shadow-lg hover:shadow-2xl transition-all duration-500 hover:scale-105 relative focus-within:ring-2 focus-within:ring-orange-500 focus-within:ring-offset-2 rounded-lg h-96">
+                  <Card className="h-full border-0 bg-transparent relative overflow-hidden rounded-lg">
+                    {/* Background image covering entire card */}
+                    <div className="absolute inset-0">
                       <img
                         src={item.image}
                         alt={`${item.name} - Equipamento da LogMunck com capacidade de ${item.capacity} e alcance de ${item.reach}, ideal para ${item.ideal}`}
                         className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
                       />
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent group-hover:from-black/60 transition-all duration-500" aria-hidden="true"></div>
+                      {/* Gradient overlays */}
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-black/20 group-hover:from-black/90 transition-all duration-500" aria-hidden="true"></div>
+                      <div className={`absolute inset-0 bg-gradient-to-br ${item.gradient} opacity-0 group-hover:opacity-30 transition-opacity duration-500`} aria-hidden="true"></div>
                     </div>
                     
-                    <CardContent className="p-8 relative z-10">
-                      <h3 className="text-2xl font-bold text-gray-900 mb-6 group-hover:text-gray-800 transition-colors">{item.name}</h3>
+                    {/* Content overlay */}
+                    <CardContent className="absolute inset-0 p-6 flex flex-col justify-end relative z-10">
+                      <h3 className="text-2xl font-bold text-white mb-4 group-hover:text-white transition-colors">{item.name}</h3>
                       
-                      <dl className="space-y-4 mb-8" aria-label={`Especificações do ${item.name}`}>
-                        <div className="flex justify-between items-center py-2 border-b border-gray-100">
-                          <dt className="text-gray-600 font-medium">Capacidade:</dt>
-                          <dd className="font-bold text-orange-600 text-lg">{item.capacity}</dd>
+                      <dl className="space-y-3 mb-6" aria-label={`Especificações do ${item.name}`}>
+                        <div className="flex justify-between items-center">
+                          <dt className="text-white/80 font-medium">Capacidade:</dt>
+                          <dd className="font-bold text-orange-400 text-lg">{item.capacity}</dd>
                         </div>
-                        <div className="flex justify-between items-center py-2 border-b border-gray-100">
-                          <dt className="text-gray-600 font-medium">Alcance:</dt>
-                          <dd className="font-bold text-blue-600 text-lg">{item.reach}</dd>
+                        <div className="flex justify-between items-center">
+                          <dt className="text-white/80 font-medium">Alcance:</dt>
+                          <dd className="font-bold text-blue-400 text-lg">{item.reach}</dd>
                         </div>
-                        <div className="flex justify-between items-center py-2">
-                          <dt className="text-gray-600 font-medium">Ideal para:</dt>
-                          <dd className="font-bold text-gray-900">{item.ideal}</dd>
+                        <div className="flex justify-between items-center">
+                          <dt className="text-white/80 font-medium">Ideal para:</dt>
+                          <dd className="font-bold text-white">{item.ideal}</dd>
                         </div>
                       </dl>
                       
