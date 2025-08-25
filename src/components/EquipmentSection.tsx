@@ -6,7 +6,8 @@ import { ArrowRight } from 'lucide-react';
 
 const EquipmentSection = () => {
   const whatsappNumber = "5585986161559";
-  const whatsappLink = `https://wa.me/${whatsappNumber}?text=Olá! Gostaria de solicitar um orçamento para locação de equipamentos.`;
+  const whatsappMessage = encodeURIComponent("Olá! Gostaria de solicitar um orçamento para locação de equipamentos.");
+  const whatsappLink = `https://wa.me/${whatsappNumber}?text=${whatsappMessage}`;
   const equipment = [
     {
       name: 'Munck 3 Toneladas',
