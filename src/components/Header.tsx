@@ -2,9 +2,11 @@
 import { useState } from 'react';
 import { Menu, X, Phone, Mail } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { useScrollDirection } from '@/hooks/useScrollDirection';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const scrollDirection = useScrollDirection();
 
   const menuItems = [
     { name: 'Início', href: '#inicio' },
@@ -18,7 +20,7 @@ const Header = () => {
   const whatsappLink = `https://wa.me/${whatsappNumber}`;
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-md border-b border-gray-200/50 shadow-lg">
+    <header className={`fixed left-0 right-0 z-50 bg-white/90 backdrop-blur-md border-b border-gray-200/50 shadow-lg transition-transform duration-300 ${scrollDirection === 'down' ? '-translate-y-full' : 'translate-y-0'} ${scrollDirection === 'up' ? 'top-0' : 'top-0'}`}>
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
