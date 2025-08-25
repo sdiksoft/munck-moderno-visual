@@ -117,22 +117,18 @@ const EquipmentSection = () => {
           role="region"
           aria-label="Carrossel de equipamentos"
         >
-          <CarouselContent className="ml-0 -mx-4">
+          <CarouselContent className="ml-0">
             {equipment.map((item, index) => {
               const isCenter = index === (current - 1);
               return (
                 <CarouselItem 
                   key={index} 
-                  className={`px-4 basis-[300px] md:basis-[350px] lg:basis-[400px] transition-all duration-500 ${
-                    isCenter 
-                      ? 'scale-110 z-20' 
-                      : 'scale-90 opacity-60 z-10'
+                  className={`px-4 md:basis-1/2 lg:basis-1/3 transition-all duration-300 ${
+                    isCenter ? 'scale-105' : 'scale-100'
                   }`}
                 >
-                  <article className={`group overflow-hidden border-0 transition-all duration-500 relative focus-within:ring-2 focus-within:ring-orange-500 focus-within:ring-offset-2 rounded-lg ${
-                    isCenter 
-                      ? 'shadow-2xl hover:shadow-3xl h-[450px]' 
-                      : 'shadow-lg hover:shadow-xl h-[400px]'
+                  <article className={`group overflow-hidden border-0 shadow-lg hover:shadow-xl transition-all duration-300 relative focus-within:ring-2 focus-within:ring-orange-500 focus-within:ring-offset-2 rounded-lg h-96 ${
+                    isCenter ? 'ring-2 ring-orange-400/50' : ''
                   }`}>
                     <Card className="h-full border-0 bg-transparent relative overflow-hidden rounded-lg">
                       {/* Background image covering entire card */}
@@ -140,42 +136,34 @@ const EquipmentSection = () => {
                         <img
                           src={item.image}
                           alt={`${item.name} - Equipamento da LogMunck com capacidade de ${item.capacity} e alcance de ${item.reach}, ideal para ${item.ideal}`}
-                          className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                          className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                         />
-                        {/* Gradient overlays */}
-                        <div className={`absolute inset-0 bg-gradient-to-t transition-all duration-500 ${
-                          isCenter 
-                            ? 'from-black/85 via-black/40 to-black/20 group-hover:from-black/90' 
-                            : 'from-black/90 via-black/60 to-black/40'
-                        }`} aria-hidden="true"></div>
-                        <div className={`absolute inset-0 bg-gradient-to-br ${item.gradient} transition-opacity duration-500 ${
-                          isCenter ? 'opacity-20 group-hover:opacity-40' : 'opacity-10'
-                        }`} aria-hidden="true"></div>
+                        {/* Simplified gradient overlay */}
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-black/20" aria-hidden="true"></div>
+                        <div className={`absolute inset-0 bg-gradient-to-br ${item.gradient} opacity-20`} aria-hidden="true"></div>
                       </div>
                       
                       {/* Content overlay with flex layout */}
                       <CardContent className="absolute inset-0 p-6 flex flex-col justify-between relative z-10 h-full">
                         {/* Title at top */}
                         <div>
-                          <h3 className={`font-bold text-white mb-4 group-hover:text-white transition-colors ${
-                            isCenter ? 'text-2xl md:text-3xl' : 'text-xl md:text-2xl'
-                          }`}>{item.name}</h3>
+                          <h3 className="text-2xl font-bold text-white mb-4 transition-colors">{item.name}</h3>
                         </div>
                         
                         {/* Specifications and button at bottom */}
                         <div className="space-y-4">
                           <dl className="space-y-3" aria-label={`Especificações do ${item.name}`}>
                             <div className="flex justify-between items-center">
-                              <dt className={`text-white/80 font-medium ${isCenter ? 'text-base' : 'text-sm'}`}>Capacidade:</dt>
-                              <dd className={`font-bold text-orange-400 ${isCenter ? 'text-lg' : 'text-base'}`}>{item.capacity}</dd>
+                              <dt className="text-white/90 font-medium">Capacidade:</dt>
+                              <dd className="font-bold text-orange-400 text-lg">{item.capacity}</dd>
                             </div>
                             <div className="flex justify-between items-center">
-                              <dt className={`text-white/80 font-medium ${isCenter ? 'text-base' : 'text-sm'}`}>Alcance:</dt>
-                              <dd className={`font-bold text-blue-400 ${isCenter ? 'text-lg' : 'text-base'}`}>{item.reach}</dd>
+                              <dt className="text-white/90 font-medium">Alcance:</dt>
+                              <dd className="font-bold text-blue-400 text-lg">{item.reach}</dd>
                             </div>
                             <div className="flex justify-between items-center">
-                              <dt className={`text-white/80 font-medium ${isCenter ? 'text-base' : 'text-sm'}`}>Ideal para:</dt>
-                              <dd className={`font-bold text-white ${isCenter ? 'text-base' : 'text-sm'}`}>{item.ideal}</dd>
+                              <dt className="text-white/90 font-medium">Ideal para:</dt>
+                              <dd className="font-bold text-white">{item.ideal}</dd>
                             </div>
                           </dl>
                           
@@ -186,9 +174,7 @@ const EquipmentSection = () => {
                             className="w-full inline-block"
                           >
                             <Button 
-                              className={`w-full bg-gradient-to-r from-orange-600 to-orange-700 hover:from-orange-700 hover:to-orange-800 text-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 group-hover:scale-105 focus:ring-2 focus:ring-orange-500 focus:ring-offset-2 ${
-                                isCenter ? 'py-3 text-base' : 'py-2 text-sm'
-                              }`}
+                              className="w-full bg-gradient-to-r from-orange-600 to-orange-700 hover:from-orange-700 hover:to-orange-800 text-white py-3 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 focus:ring-2 focus:ring-orange-500 focus:ring-offset-2"
                               aria-label={`Solicitar orçamento para ${item.name} via WhatsApp`}
                             >
                               Solicitar Orçamento
