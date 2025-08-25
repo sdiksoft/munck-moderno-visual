@@ -139,18 +139,7 @@ const Footer = () => {
               © 2024 LogMunck. Todos os direitos reservados.
             </div>
             <nav className="flex space-x-6 text-sm text-gray-400" aria-label="Links legais">
-              <a 
-                href="#" 
-                className="hover:text-orange-500 transition-colors focus:text-orange-500 focus:underline focus:outline-none"
-              >
-                Política de Privacidade
-              </a>
-              <a 
-                href="#" 
-                className="hover:text-orange-500 transition-colors focus:text-orange-500 focus:underline focus:outline-none"
-              >
-                Termos de Uso
-              </a>
+             Acreditamos em Deus.
             </nav>
           </div>
         </div>
