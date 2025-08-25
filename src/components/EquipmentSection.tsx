@@ -54,7 +54,7 @@ const EquipmentSection = () => {
       image: '/lovable-uploads/5fc049a1-8aa8-4c5a-9311-fd65c67a531a.png',
       capacity: '110 Toneladas',
       reach: '68 metros',
-      ideal: 'Grandes projetos industriais',
+      ideal: 'Super projetos',
       gradient: 'from-teal-500/20 to-teal-600/20'
     },
     {
