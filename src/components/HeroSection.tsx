@@ -58,21 +58,29 @@ const HeroSection = () => {
 
             {/* Enhanced CTA Buttons */}
             <div className="flex flex-col sm:flex-row gap-4">
-              <Button 
-                size="lg" 
-                className="bg-gradient-to-r from-orange-600 to-orange-700 hover:from-orange-700 hover:to-orange-800 text-white px-8 py-4 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105"
+              <a
+                href="https://wa.me/5585986161559?text=Olá! Gostaria de solicitar um orçamento para locação de equipamentos."
+                target="_blank"
+                rel="noopener noreferrer"
               >
-                Solicitar Orçamento Grátis
-                <ArrowRight className="ml-2 h-5 w-5" />
-              </Button>
-              <Button 
-                size="lg" 
-                variant="outline" 
-                className="border-2 border-gray-300 hover:border-gray-400 bg-white/80 backdrop-blur-sm px-8 py-4 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 group"
-              >
-                <Play className="mr-2 h-5 w-5 group-hover:scale-110 transition-transform" />
-                Ver Equipamentos
-              </Button>
+                <Button 
+                  size="lg" 
+                  className="bg-gradient-to-r from-orange-600 to-orange-700 hover:from-orange-700 hover:to-orange-800 text-white px-8 py-4 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105"
+                >
+                  Solicitar Orçamento Grátis
+                  <ArrowRight className="ml-2 h-5 w-5" />
+                </Button>
+              </a>
+              <a href="#equipamentos">
+                <Button 
+                  size="lg" 
+                  variant="outline" 
+                  className="border-2 border-gray-300 hover:border-gray-400 bg-white/80 backdrop-blur-sm px-8 py-4 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 group"
+                >
+                  <Play className="mr-2 h-5 w-5 group-hover:scale-110 transition-transform" />
+                  Ver Equipamentos
+                </Button>
+              </a>
             </div>
           </div>
 
