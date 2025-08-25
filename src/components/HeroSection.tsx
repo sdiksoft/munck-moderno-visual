@@ -22,7 +22,7 @@ const HeroSection = () => {
           <div className="animate-fade-up">
             <div className="inline-flex items-center bg-gradient-to-r from-orange-100 to-blue-100 px-4 py-2 rounded-full text-sm font-medium text-gray-700 mb-6 border border-orange-200/50">
               <span className="w-2 h-2 bg-green-500 rounded-full mr-2 animate-pulse"></span>
-              Disponível 24h • Atendimento Imediato
+              Sempre a melhor solução
             </div>
             
             <h1 className="text-5xl md:text-7xl font-bold text-gray-900 mb-8 leading-tight">
