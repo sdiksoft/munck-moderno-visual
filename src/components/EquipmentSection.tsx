@@ -3,11 +3,10 @@ import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from '@/components/ui/carousel';
 import { ArrowRight } from 'lucide-react';
+import { useWhatsApp } from '@/hooks/useWhatsApp';
 
 const EquipmentSection = () => {
-  const whatsappNumber = "5585986161559";
-  const whatsappMessage = encodeURIComponent("Olá! Gostaria de solicitar um orçamento para locação de equipamentos.");
-  const whatsappLink = `https://web.whatsapp.com/send?phone=${whatsappNumber}&text=${whatsappMessage}`;
+  const { whatsappLink } = useWhatsApp("5585986161559", "Olá! Gostaria de solicitar um orçamento para locação de equipamentos.");
   
   const equipment = [
     {

@@ -1,8 +1,10 @@
 
 import { ArrowRight, CheckCircle, Play } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { useWhatsApp } from '@/hooks/useWhatsApp';
 
 const HeroSection = () => {
+  const { whatsappLink } = useWhatsApp("5585986161559", "Olá! Gostaria de solicitar um orçamento para locação de equipamentos.");
   return (
     <section id="inicio" className="relative min-h-screen flex items-center pt-16 overflow-hidden">
       {/* Background with enhanced gradient overlay */}
@@ -59,7 +61,7 @@ const HeroSection = () => {
             {/* Enhanced CTA Buttons */}
             <div className="flex flex-col sm:flex-row gap-4">
               <a
-                href="https://wa.me/5585986161559?text=Olá! Gostaria de solicitar um orçamento para locação de equipamentos."
+                href={whatsappLink}
                 target="_blank"
                 rel="noopener noreferrer"
               >
