@@ -109,43 +109,49 @@ const EquipmentSection = () => {
                         className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
                       />
                       {/* Gradient overlays */}
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-black/20 group-hover:from-black/90 transition-all duration-500" aria-hidden="true"></div>
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-black/30 group-hover:from-black/95 transition-all duration-500" aria-hidden="true"></div>
                       <div className={`absolute inset-0 bg-gradient-to-br ${item.gradient} opacity-0 group-hover:opacity-30 transition-opacity duration-500`} aria-hidden="true"></div>
                     </div>
                     
-                    {/* Content overlay */}
-                    <CardContent className="absolute inset-0 p-6 flex flex-col justify-end relative z-10">
-                      <h3 className="text-2xl font-bold text-white mb-4 group-hover:text-white transition-colors">{item.name}</h3>
+                    {/* Content overlay with flex layout */}
+                    <CardContent className="absolute inset-0 p-6 flex flex-col justify-between relative z-10 h-full">
+                      {/* Title at top */}
+                      <div>
+                        <h3 className="text-2xl font-bold text-white mb-4 group-hover:text-white transition-colors">{item.name}</h3>
+                      </div>
                       
-                      <dl className="space-y-3 mb-6" aria-label={`Especificações do ${item.name}`}>
-                        <div className="flex justify-between items-center">
-                          <dt className="text-white/80 font-medium">Capacidade:</dt>
-                          <dd className="font-bold text-orange-400 text-lg">{item.capacity}</dd>
-                        </div>
-                        <div className="flex justify-between items-center">
-                          <dt className="text-white/80 font-medium">Alcance:</dt>
-                          <dd className="font-bold text-blue-400 text-lg">{item.reach}</dd>
-                        </div>
-                        <div className="flex justify-between items-center">
-                          <dt className="text-white/80 font-medium">Ideal para:</dt>
-                          <dd className="font-bold text-white">{item.ideal}</dd>
-                        </div>
-                      </dl>
-                      
-                      <a 
-                        href={whatsappLink}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="w-full inline-block"
-                      >
-                        <Button 
-                          className="w-full bg-gradient-to-r from-orange-600 to-orange-700 hover:from-orange-700 hover:to-orange-800 text-white py-3 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 group-hover:scale-105 focus:ring-2 focus:ring-orange-500 focus:ring-offset-2"
-                          aria-label={`Solicitar orçamento para ${item.name} via WhatsApp`}
+                      {/* Specifications and button at bottom */}
+                      <div className="space-y-4">
+                        <dl className="space-y-3" aria-label={`Especificações do ${item.name}`}>
+                          <div className="flex justify-between items-center">
+                            <dt className="text-white/80 font-medium">Capacidade:</dt>
+                            <dd className="font-bold text-orange-400 text-lg">{item.capacity}</dd>
+                          </div>
+                          <div className="flex justify-between items-center">
+                            <dt className="text-white/80 font-medium">Alcance:</dt>
+                            <dd className="font-bold text-blue-400 text-lg">{item.reach}</dd>
+                          </div>
+                          <div className="flex justify-between items-center">
+                            <dt className="text-white/80 font-medium">Ideal para:</dt>
+                            <dd className="font-bold text-white">{item.ideal}</dd>
+                          </div>
+                        </dl>
+                        
+                        <a 
+                          href={whatsappLink}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="w-full inline-block"
                         >
-                          Solicitar Orçamento
-                          <ArrowRight className="ml-2 h-4 w-4" aria-hidden="true" />
-                        </Button>
-                      </a>
+                          <Button 
+                            className="w-full bg-gradient-to-r from-orange-600 to-orange-700 hover:from-orange-700 hover:to-orange-800 text-white py-3 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 group-hover:scale-105 focus:ring-2 focus:ring-orange-500 focus:ring-offset-2"
+                            aria-label={`Solicitar orçamento para ${item.name} via WhatsApp`}
+                          >
+                            Solicitar Orçamento
+                            <ArrowRight className="ml-2 h-4 w-4" aria-hidden="true" />
+                          </Button>
+                        </a>
+                      </div>
                     </CardContent>
                   </Card>
                 </article>
