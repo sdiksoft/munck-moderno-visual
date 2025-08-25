@@ -37,8 +37,9 @@ const HeroSection = () => {
             </h1>
             
             <p className="text-xl text-gray-600 mb-10 leading-relaxed max-w-lg">
-              Soluções completas em locação de muncks, guindastes e equipamentos pesados 
-              para sua obra. Qualidade, segurança e confiabilidade garantidas há mais de 15 anos.
+              Soluções completas em locação de muncks e guindastes de alta capacidade, 
+              especializados em equipamentos de 60 a 100 toneladas. Qualidade, segurança 
+              e confiabilidade garantidas há mais de 15 anos.
             </p>
             
             {/* Enhanced Features */}
