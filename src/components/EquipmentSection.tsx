@@ -3,14 +3,8 @@ import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from '@/components/ui/carousel';
 import { ArrowRight } from 'lucide-react';
-import { useState, useEffect } from 'react';
-import type { CarouselApi } from '@/components/ui/carousel';
 
 const EquipmentSection = () => {
-  const [api, setApi] = useState<CarouselApi>();
-  const [current, setCurrent] = useState(0);
-  const [count, setCount] = useState(0);
-
   const whatsappNumber = "5585986161559";
   const whatsappMessage = encodeURIComponent("Olá! Gostaria de solicitar um orçamento para locação de equipamentos.");
   const whatsappLink = `https://web.whatsapp.com/send?phone=${whatsappNumber}&text=${whatsappMessage}`;
@@ -74,19 +68,6 @@ const EquipmentSection = () => {
     }
   ];
 
-  useEffect(() => {
-    if (!api) {
-      return;
-    }
-
-    setCount(api.scrollSnapList().length);
-    setCurrent(api.selectedScrollSnap() + 1);
-
-    api.on("select", () => {
-      setCurrent(api.selectedScrollSnap() + 1);
-    });
-  }, [api]);
-
   return (
     <section id="equipamentos" className="py-24 bg-gradient-to-br from-white via-gray-50/50 to-white relative overflow-hidden" aria-labelledby="equipment-heading">
       {/* Background decorative elements */}
@@ -108,9 +89,8 @@ const EquipmentSection = () => {
         </header>
 
         <Carousel 
-          setApi={setApi}
           opts={{
-            align: "center",
+            align: "start",
             loop: true,
           }}
           className="w-full"
@@ -118,79 +98,69 @@ const EquipmentSection = () => {
           aria-label="Carrossel de equipamentos"
         >
           <CarouselContent className="ml-0">
-            {equipment.map((item, index) => {
-              const isCenter = index === (current - 1);
-              return (
-                <CarouselItem 
-                  key={index} 
-                  className={`px-4 md:basis-1/2 lg:basis-1/3 transition-all duration-300 ${
-                    isCenter ? 'scale-105' : 'scale-100'
-                  }`}
-                >
-                  <article className={`group overflow-hidden border-0 shadow-lg hover:shadow-xl transition-all duration-300 relative focus-within:ring-2 focus-within:ring-orange-500 focus-within:ring-offset-2 rounded-lg h-96 ${
-                    isCenter ? 'ring-2 ring-orange-400/50' : ''
-                  }`}>
-                    <Card className="h-full border-0 bg-transparent relative overflow-hidden rounded-lg">
-                      {/* Background image covering entire card */}
-                      <div className="absolute inset-0">
-                        <img
-                          src={item.image}
-                          alt={`${item.name} - Equipamento da LogMunck com capacidade de ${item.capacity} e alcance de ${item.reach}, ideal para ${item.ideal}`}
-                          className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                        />
-                        {/* Simplified gradient overlay */}
-                        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-black/20" aria-hidden="true"></div>
-                        <div className={`absolute inset-0 bg-gradient-to-br ${item.gradient} opacity-20`} aria-hidden="true"></div>
+            {equipment.map((item, index) => (
+              <CarouselItem key={index} className="pl-4 md:basis-1/2 lg:basis-1/3">
+                <article className="group overflow-hidden border-0 shadow-lg hover:shadow-xl transition-all duration-300 relative focus-within:ring-2 focus-within:ring-orange-500 focus-within:ring-offset-2 rounded-lg h-96">
+                  <Card className="h-full border-0 bg-transparent relative overflow-hidden rounded-lg">
+                    {/* Background image covering entire card */}
+                    <div className="absolute inset-0">
+                      <img
+                        src={item.image}
+                        alt={`${item.name} - Equipamento da LogMunck com capacidade de ${item.capacity} e alcance de ${item.reach}, ideal para ${item.ideal}`}
+                        className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                      />
+                      {/* Gradient overlay */}
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-black/20" aria-hidden="true"></div>
+                      <div className={`absolute inset-0 bg-gradient-to-br ${item.gradient} opacity-20`} aria-hidden="true"></div>
+                    </div>
+                    
+                    {/* Content overlay with flex layout */}
+                    <CardContent className="absolute inset-0 p-6 flex flex-col justify-between relative z-10 h-full">
+                      {/* Title at top */}
+                      <div>
+                        <h3 className="text-2xl font-bold text-white mb-4 transition-colors">{item.name}</h3>
                       </div>
                       
-                      {/* Content overlay with flex layout */}
-                      <CardContent className="absolute inset-0 p-6 flex flex-col justify-between relative z-10 h-full">
-                        {/* Title at top */}
-                        <div>
-                          <h3 className="text-2xl font-bold text-white mb-4 transition-colors">{item.name}</h3>
-                        </div>
+                      {/* Specifications and button at bottom */}
+                      <div className="space-y-4">
+                        <dl className="space-y-3" aria-label={`Especificações do ${item.name}`}>
+                          <div className="flex justify-between items-center">
+                            <dt className="text-white/90 font-medium">Capacidade:</dt>
+                            <dd className="font-bold text-orange-400 text-lg">{item.capacity}</dd>
+                          </div>
+                          <div className="flex justify-between items-center">
+                            <dt className="text-white/90 font-medium">Alcance:</dt>
+                            <dd className="font-bold text-blue-400 text-lg">{item.reach}</dd>
+                          </div>
+                          <div className="flex justify-between items-center">
+                            <dt className="text-white/90 font-medium">Ideal para:</dt>
+                            <dd className="font-bold text-white">{item.ideal}</dd>
+                          </div>
+                        </dl>
                         
-                        {/* Specifications and button at bottom */}
-                        <div className="space-y-4">
-                          <dl className="space-y-3" aria-label={`Especificações do ${item.name}`}>
-                            <div className="flex justify-between items-center">
-                              <dt className="text-white/90 font-medium">Capacidade:</dt>
-                              <dd className="font-bold text-orange-400 text-lg">{item.capacity}</dd>
-                            </div>
-                            <div className="flex justify-between items-center">
-                              <dt className="text-white/90 font-medium">Alcance:</dt>
-                              <dd className="font-bold text-blue-400 text-lg">{item.reach}</dd>
-                            </div>
-                            <div className="flex justify-between items-center">
-                              <dt className="text-white/90 font-medium">Ideal para:</dt>
-                              <dd className="font-bold text-white">{item.ideal}</dd>
-                            </div>
-                          </dl>
-                          
-                          <a 
-                            href={whatsappLink}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="w-full inline-block"
+                        <a 
+                          href={whatsappLink}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="w-full inline-block"
+                        >
+                          <Button 
+                            className="w-full bg-gradient-to-r from-orange-600 to-orange-700 hover:from-orange-700 hover:to-orange-800 text-white py-3 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 focus:ring-2 focus:ring-orange-500 focus:ring-offset-2"
+                            aria-label={`Solicitar orçamento para ${item.name} via WhatsApp`}
                           >
-                            <Button 
-                              className="w-full bg-gradient-to-r from-orange-600 to-orange-700 hover:from-orange-700 hover:to-orange-800 text-white py-3 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 focus:ring-2 focus:ring-orange-500 focus:ring-offset-2"
-                              aria-label={`Solicitar orçamento para ${item.name} via WhatsApp`}
-                            >
-                              Solicitar Orçamento
-                              <ArrowRight className="ml-2 h-4 w-4" aria-hidden="true" />
-                            </Button>
-                          </a>
-                        </div>
-                      </CardContent>
-                    </Card>
-                  </article>
-                </CarouselItem>
-              );
-            })}
+                            Solicitar Orçamento
+                            <ArrowRight className="ml-2 h-4 w-4" aria-hidden="true" />
+                          </Button>
+                        </a>
+                      </div>
+                    </CardContent>
+                  </Card>
+                </article>
+              </CarouselItem>
+            ))}
           </CarouselContent>
-          <CarouselPrevious className="left-4 shadow-lg bg-white/90 hover:bg-white" aria-label="Equipamento anterior" />
-          <CarouselNext className="right-4 shadow-lg bg-white/90 hover:bg-white" aria-label="Próximo equipamento" />
+          <CarouselPrevious className="left-4" aria-label="Equipamento anterior" />
+          <CarouselNext className="right-4" aria-label="Próximo equipamento" />
         </Carousel>
       </div>
     </section>
