@@ -42,9 +42,9 @@ const EquipmentSection = () => {
       gradient: 'from-purple-500/20 to-purple-600/20'
     },
     {
-      name: 'Guindaste 70 Toneladas',
+      name: 'Guindaste 75 Toneladas',
       image: '/lovable-uploads/436f6ecf-7a6a-4b51-a9d7-e7d3d07347a8.png',
-      capacity: '70 Toneladas',
+      capacity: '75 Toneladas',
       reach: '45 metros',
       ideal: 'Projetos especiais',
       gradient: 'from-red-500/20 to-red-600/20'
