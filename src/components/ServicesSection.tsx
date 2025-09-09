@@ -8,7 +8,7 @@ const ServicesSection = () => {
       icon: Truck,
       title: 'Locação de Muncks',
       description: 'Frota completa de muncks com diferentes capacidades para atender suas necessidades específicas.',
-      features: ['Muncks 3 a 70 toneladas', 'Equipamentos revisados', 'Entrega no local'],
+      features: ['Muncks 12 a 52 ton', 'Equipamentos revisados', 'Entrega no local'],
       gradient: 'from-orange-500 to-orange-600'
     },
     {
